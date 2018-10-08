@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation';
 
-import HomeScreen from './js/screens/HomeScreen';
-import SettingsScreen from './js/screens/SettingsScreen';
-
-const AppNavigator = createBottomTabNavigator({
-  Home: HomeScreen,
-  Settings: SettingsScreen
-});
+import AppNavigator from './js/AppNavigator';
 
 export default class App extends Component {
   render() {
