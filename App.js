@@ -1,12 +1,37 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// React Navigation
+import { createBottomTabNavigator } from 'react-navigation';
+
+class Screen1 extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>SCREEN1</Text>
+      </View>
+    );
+  }
+}
+
+class Screen2 extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>SCREEN2</Text>
+      </View>
+    );
+  }
+}
+
+const AppNavigator = createBottomTabNavigator({
+  Home: Screen1,
+  Settings: Screen2
+});
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+      <View style={{ flex: 1 }}>
+        <AppNavigator />
       </View>
     );
   }
