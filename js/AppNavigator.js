@@ -9,7 +9,10 @@ import HomeScreen from './screens/HomeScreen';
 import FriendScreen from './screens/FriendScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
-const HomeStack = createStackNavigator({ HomeScreen, FriendScreen });
+const HomeStack = createStackNavigator(
+  { HomeScreen, FriendScreen },
+  { navigationOptions: { headerStyle: { backgroundColor: 'aliceblue' } } }
+);
 
 export default createBottomTabNavigator(
   {

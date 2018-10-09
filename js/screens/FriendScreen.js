@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default class FriendScreen extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('friend')
+    };
+  };
+
   render() {
     const navigation = this.props.navigation;
     return (
