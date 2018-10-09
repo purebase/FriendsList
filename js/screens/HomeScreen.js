@@ -7,8 +7,16 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <Text>HOME SCREEN!!!!</Text>
         <Button
-          title="Gehe zu Freund"
-          onPress={() => this.props.navigation.navigate('FriendScreen')}
+          title="Gehe zu Alice"
+          onPress={() =>
+            this.props.navigation.navigate('FriendScreen', { friend: 'Alice' })
+          }
+        />
+        <Button
+          title="Gehe zu Bob"
+          onPress={() =>
+            this.props.navigation.navigate('FriendScreen', { friend: 'Bob' })
+          }
         />
       </View>
     );

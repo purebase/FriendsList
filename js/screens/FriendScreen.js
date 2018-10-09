@@ -3,13 +3,11 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default class FriendScreen extends Component {
   render() {
+    const navigation = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text>FRIEND SCREEN</Text>
-        <Button
-          title="Gehe zurück"
-          onPress={() => this.props.navigation.goBack()}
-        />
+        <Text>{navigation.getParam('friend')}</Text>
+        <Button title="Gehe zurück" onPress={() => navigation.goBack()} />
       </View>
     );
   }
