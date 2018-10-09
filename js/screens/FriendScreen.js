@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default class HomeScreen extends Component {
+export default class FriendScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HOME SCREEN!!!!</Text>
+        <Text>FRIEND SCREEN</Text>
         <Button
-          title="Gehe zu Freund"
-          onPress={() => this.props.navigation.navigate('FriendScreen')}
+          title="Gehe zurück"
+          onPress={() => this.props.navigation.goBack()}
         />
       </View>
     );

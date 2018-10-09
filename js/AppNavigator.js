@@ -1,14 +1,20 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
+import {
+  createBottomTabNavigator,
+  createStackNavigator
+} from 'react-navigation';
 import { Icon } from 'expo';
 
 import HomeScreen from './screens/HomeScreen';
+import FriendScreen from './screens/FriendScreen';
 import SettingsScreen from './screens/SettingsScreen';
+
+const HomeStack = createStackNavigator({ HomeScreen, FriendScreen });
 
 export default createBottomTabNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: HomeStack,
       navigationOptions: {
         title: 'Freunde',
         tabBarIcon: ({ tintColor }) => (
