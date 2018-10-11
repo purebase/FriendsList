@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Button, FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+
+import FriendListItem from '../components/FriendListItem';
 
 export default class HomeScreen extends Component {
   static navigationOptions = { header: null };
@@ -16,8 +18,8 @@ export default class HomeScreen extends Component {
           ]}
           keyExtractor={item => item.name}
           renderItem={({ item }) => (
-            <Button
-              title={`Gehe zu ${item.name}`}
+            <FriendListItem
+              friend={item}
               onPress={() =>
                 this.props.navigation.navigate('FriendScreen', {
                   friend: item.name
