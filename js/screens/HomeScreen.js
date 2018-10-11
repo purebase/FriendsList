@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, FlatList, StyleSheet, View } from 'react-native';
 
 export default class HomeScreen extends Component {
   static navigationOptions = { header: null };
@@ -7,18 +7,23 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HOME SCREEN!!!!</Text>
-        <Button
-          title="Gehe zu Alice"
-          onPress={() =>
-            this.props.navigation.navigate('FriendScreen', { friend: 'Alice' })
-          }
-        />
-        <Button
-          title="Gehe zu Bob"
-          onPress={() =>
-            this.props.navigation.navigate('FriendScreen', { friend: 'Bob' })
-          }
+        <FlatList
+          data={[
+            { key: '1', name: 'Alice' },
+            { key: '2', name: 'Bob' },
+            { key: '3', name: 'Joe' },
+            { key: '4', name: 'Jane' }
+          ]}
+          renderItem={({ item }) => (
+            <Button
+              title={`Gehe zu ${item.name}`}
+              onPress={() =>
+                this.props.navigation.navigate('FriendScreen', {
+                  friend: item.name
+                })
+              }
+            />
+          )}
         />
       </View>
     );
@@ -29,7 +34,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+    paddingTop: 30
   }
 });
