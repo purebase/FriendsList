@@ -27,6 +27,7 @@ export default class HomeScreen extends Component {
               }
             />
           )}
+          ItemSeparatorComponent={() => <View style={styles.listSeparator} />}
         />
       </View>
     );
@@ -38,5 +39,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingTop: 30
+  },
+  listSeparator: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: 'lightsalmon',
+    marginVertical: 5
   }
 });
