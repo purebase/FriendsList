@@ -9,11 +9,12 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <FlatList
           data={[
-            { key: '1', name: 'Alice' },
-            { key: '2', name: 'Bob' },
-            { key: '3', name: 'Joe' },
-            { key: '4', name: 'Jane' }
+            { name: 'Alice' },
+            { name: 'Bob' },
+            { name: 'Joe' },
+            { name: 'Jane' }
           ]}
+          keyExtractor={item => item.name}
           renderItem={({ item }) => (
             <Button
               title={`Gehe zu ${item.name}`}
