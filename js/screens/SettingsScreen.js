@@ -17,6 +17,11 @@ export default class SettingsScreen extends Component {
             }
           ]}
           renderItem={({ item }) => <Text>{item.name}</Text>}
+          renderSectionHeader={({ section }) => (
+            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
+              {section.title}
+            </Text>
+          )}
         />
       </View>
     );
