@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { SectionList, StyleSheet, Text, View } from 'react-native';
 
+function SettingsItem(props) {
+  return <Text style={styles.item}>{props.text}</Text>;
+}
+
+function SettingsHeader(props) {
+  return <Text style={styles.section}>{props.text}</Text>;
+}
+
 export default class SettingsScreen extends Component {
   render() {
     return (
@@ -8,19 +16,20 @@ export default class SettingsScreen extends Component {
         <SectionList
           sections={[
             {
-              title: 'Abschnitt 1',
-              data: [{ key: '1', name: 'Alice' }, { key: '2', name: 'Bob' }]
+              title: 'Version',
+              data: [{ key: '1', info: '1.0' }]
             },
             {
-              title: 'Abschnitt 2',
-              data: [{ key: '3', name: 'Alice2' }, { key: '4', name: 'Bob2' }]
+              title: 'Impressum',
+              data: [
+                { key: '2', info: 'Beispiel GmbH' },
+                { key: '3', info: 'copyright 2018' }
+              ]
             }
           ]}
-          renderItem={({ item }) => <Text>{item.name}</Text>}
+          renderItem={({ item }) => <SettingsItem text={item.info} />}
           renderSectionHeader={({ section }) => (
-            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
-              {section.title}
-            </Text>
+            <SettingsHeader text={section.title} />
           )}
         />
       </View>
@@ -33,5 +42,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingTop: 30
+  },
+  section: {
+    backgroundColor: 'whitesmoke',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: 'lightgrey',
+    fontSize: 18,
+    padding: 5
+  },
+  item: {
+    color: 'dimgrey',
+    fontSize: 18,
+    padding: 5
   }
 });
