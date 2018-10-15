@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 export default class FriendScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -12,8 +12,8 @@ export default class FriendScreen extends Component {
     const navigation = this.props.navigation;
     return (
       <View style={styles.container}>
+        <Image style={styles.image} source={require('../../assets/icon.png')} />
         <Text>{navigation.getParam('friend')}</Text>
-        <Button title="Gehe zurück" onPress={() => navigation.goBack()} />
       </View>
     );
   }
