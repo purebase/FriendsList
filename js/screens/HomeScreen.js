@@ -11,18 +11,18 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <FlatList
           data={[
-            { name: 'Alice' },
-            { name: 'Bob' },
-            { name: 'Joe' },
-            { name: 'Jane' }
+            { first: 'Alice', last: 'Smith', email: 'test1@example.com' },
+            { first: 'Bob', last: 'Smith', email: 'test2@example.com' },
+            { first: 'Joe', last: 'Smith', email: 'test3@example.com' },
+            { first: 'Jane', last: 'Smith', email: 'test4@example.com' }
           ]}
-          keyExtractor={item => item.name}
+          keyExtractor={item => item.email}
           renderItem={({ item }) => (
             <FriendListItem
               friend={item}
               onPress={() =>
                 this.props.navigation.navigate('FriendScreen', {
-                  friend: item.name
+                  friend: item
                 })
               }
             />

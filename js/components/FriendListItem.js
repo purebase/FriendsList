@@ -7,7 +7,9 @@ export default function(props) {
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
         <Image style={styles.image} source={require('../../assets/icon.png')} />
-        <Text>{friend.name}</Text>
+        <Text>
+          {friend.first} {friend.last}
+        </Text>
       </View>
     </TouchableOpacity>
   );

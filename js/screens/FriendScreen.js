@@ -3,8 +3,9 @@ import { Dimensions, Image, ScrollView, StyleSheet, Text } from 'react-native';
 
 export default class FriendScreen extends Component {
   static navigationOptions = ({ navigation }) => {
+    const friend = navigation.getParam('friend');
     return {
-      title: navigation.getParam('friend')
+      title: `${friend.first} ${friend.last}`
     };
   };
 
@@ -16,7 +17,7 @@ export default class FriendScreen extends Component {
         contentContainerStyle={styles.container}
       >
         <Image style={styles.image} source={require('../../assets/icon.png')} />
-        <Text>{navigation.getParam('friend')}</Text>
+        <Text>{navigation.getParam('friend').first}</Text>
       </ScrollView>
     );
   }
