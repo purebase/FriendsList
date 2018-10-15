@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, ScrollView, StyleSheet, Text } from 'react-native';
+import { Dimensions, Image, ScrollView, StyleSheet, Text } from 'react-native';
 
 export default class FriendScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -22,6 +22,8 @@ export default class FriendScreen extends Component {
   }
 }
 
+const width = Dimensions.get('window').width * 0.75;
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
@@ -32,8 +34,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   image: {
-    width: 250,
-    height: 250,
+    width: width,
+    height: width,
     marginBottom: 20
   }
 });
