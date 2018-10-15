@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text } from 'react-native';
 
 export default class FriendScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -11,19 +11,29 @@ export default class FriendScreen extends Component {
   render() {
     const navigation = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <ScrollView
+        style={styles.scrollview}
+        contentContainerStyle={styles.container}
+      >
         <Image style={styles.image} source={require('../../assets/icon.png')} />
         <Text>{navigation.getParam('friend')}</Text>
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    padding: 20
+  },
+  scrollview: {
+    backgroundColor: '#fff'
+  },
+  image: {
+    width: 250,
+    height: 250,
+    marginBottom: 20
   }
 });
