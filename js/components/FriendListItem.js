@@ -7,9 +7,12 @@ export default function(props) {
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
         <Image style={styles.image} source={require('../../assets/icon.png')} />
-        <Text>
-          {friend.first} {friend.last}
-        </Text>
+        <View style={styles.info}>
+          <Text style={styles.text}>
+            {friend.first} {friend.last}
+          </Text>
+          <Text style={styles.smallText}>{friend.email}</Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -23,6 +26,18 @@ const styles = StyleSheet.create({
   image: {
     width: 80,
     height: 80,
+    borderRadius: 40,
     marginRight: 10
+  },
+  info: {
+    flexDirection: 'column',
+    justifyContent: 'space-evenly'
+  },
+  text: {
+    fontSize: 20
+  },
+  smallText: {
+    fontSize: 16,
+    fontWeight: '100'
   }
 });
