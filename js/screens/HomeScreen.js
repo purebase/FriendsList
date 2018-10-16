@@ -25,6 +25,11 @@ export default class HomeScreen extends Component {
     }
   };
 
+  _refresh = () => {
+    this.setState({ isLoading: true });
+    this._fetchData();
+  };
+
   componentDidMount() {
     this._fetchData();
   }
@@ -51,6 +56,8 @@ export default class HomeScreen extends Component {
               }
             />
           )}
+          onRefresh={this._refresh}
+          refreshing={this.state.isLoading}
           ItemSeparatorComponent={() => <View style={styles.listSeparator} />}
           ListEmptyComponent={() => (
             <Text style={styles.listEmpty}>Keine Daten geladen</Text>
