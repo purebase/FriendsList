@@ -9,15 +9,9 @@ export default class HomeScreen extends Component {
   state = { data: [], isLoading: true };
 
   _fetchData = async () => {
-    const data = [
-      { first: 'Alice', last: 'Smith', email: 'test1@example.com' },
-      { first: 'Bob', last: 'Smith', email: 'test2@example.com' },
-      { first: 'Joe', last: 'Smith', email: 'test3@example.com' },
-      { first: 'Jane', last: 'Smith', email: 'test4@example.com' }
-    ];
-    // Simulation: 3 Sekunden
-    await new Promise(_ => setTimeout(_, 3000));
-    this.setState({ data, isLoading: false });
+    const response = await fetch('https://randomuser.me/api/?results=20');
+    const responseJSON = await response.json();
+    this.setState({ data: responseJSON.results, isLoading: false });
   };
 
   componentDidMount() {

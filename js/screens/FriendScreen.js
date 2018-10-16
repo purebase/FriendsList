@@ -5,7 +5,7 @@ export default class FriendScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     const friend = navigation.getParam('friend');
     return {
-      title: `${friend.first} ${friend.last}`
+      title: `${friend.name.first} ${friend.name.last}`
     };
   };
 
@@ -17,7 +17,7 @@ export default class FriendScreen extends Component {
         contentContainerStyle={styles.container}
       >
         <Image style={styles.image} source={require('../../assets/icon.png')} />
-        <Text>{navigation.getParam('friend').first}</Text>
+        <Text>{navigation.getParam('friend').name.first}</Text>
       </ScrollView>
     );
   }

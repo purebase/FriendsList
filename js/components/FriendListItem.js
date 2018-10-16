@@ -9,7 +9,7 @@ export default function(props) {
         <Image style={styles.image} source={require('../../assets/icon.png')} />
         <View style={styles.info}>
           <Text style={styles.text}>
-            {friend.first} {friend.last}
+            {friend.name.first} {friend.name.last}
           </Text>
           <Text style={styles.smallText}>{friend.email}</Text>
         </View>
