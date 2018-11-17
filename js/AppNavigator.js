@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  createAppContainer,
   createBottomTabNavigator,
   createStackNavigator
 } from 'react-navigation';
@@ -11,10 +12,14 @@ import SettingsScreen from './screens/SettingsScreen';
 
 const HomeStack = createStackNavigator(
   { HomeScreen, FriendScreen },
-  { navigationOptions: { headerStyle: { backgroundColor: 'aliceblue' } } }
+  {
+    defaultNavigationOptions: {
+      headerStyle: { backgroundColor: 'aliceblue' }
+    }
+  }
 );
 
-export default createBottomTabNavigator(
+const TabNavigator = createBottomTabNavigator(
   {
     Home: {
       screen: HomeStack,
@@ -44,3 +49,5 @@ export default createBottomTabNavigator(
     }
   }
 );
+
+export default createAppContainer(TabNavigator);
