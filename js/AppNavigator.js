@@ -4,7 +4,7 @@ import {
   createBottomTabNavigator,
   createStackNavigator
 } from 'react-navigation';
-import { Icon } from 'expo';
+import * as Icon from '@expo/vector-icons';
 
 import HomeScreen from './screens/HomeScreen';
 import FriendScreen from './screens/FriendScreen';
