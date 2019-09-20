@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  createAppContainer,
-  createBottomTabNavigator,
-  createStackNavigator
-} from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import * as Icon from '@expo/vector-icons';
 
 import HomeScreen from './screens/HomeScreen';
