@@ -17,15 +17,15 @@ export default class SettingsScreen extends Component {
           sections={[
             {
               title: 'Version',
-              data: [{ key: '1', info: '1.0' }]
+              data: [{ key: '1', info: '1.0' }],
             },
             {
               title: 'Impressum',
               data: [
                 { key: '2', info: 'Beispiel GmbH' },
-                { key: '3', info: 'copyright 2018' }
-              ]
-            }
+                { key: '3', info: 'copyright 2018' },
+              ],
+            },
           ]}
           renderItem={({ item }) => <SettingsItem text={item.info} />}
           renderSectionHeader={({ section }) => (
@@ -41,18 +41,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: 30
+    paddingTop: 30,
   },
   section: {
     backgroundColor: 'whitesmoke',
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: 'lightgrey',
     fontSize: 18,
-    padding: 5
+    padding: 5,
   },
   item: {
     color: 'dimgrey',
     fontSize: 18,
-    padding: 5
-  }
+    padding: 5,
+  },
 });

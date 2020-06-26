@@ -4,19 +4,19 @@ import {
   FlatList,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
 import FriendListItem from '../components/FriendListItem';
 
 export default class HomeScreen extends Component {
-  static navigationOptions = { header: null };
-
   state = { data: [], isLoading: true };
 
   _fetchData = async () => {
     try {
-      const response = await fetch('https://randomuser.me/api/?results=20');
+      const response = await fetch(
+        'https://randomuser.me/api/?results=20'
+      );
       const responseJSON = await response.json();
       this.setState({ data: responseJSON.results, isLoading: false });
     } catch (error) {
@@ -45,20 +45,22 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <FlatList
           data={this.state.data}
-          keyExtractor={item => item.email}
+          keyExtractor={(item) => item.email}
           renderItem={({ item }) => (
             <FriendListItem
               friend={item}
               onPress={() =>
                 this.props.navigation.navigate('FriendScreen', {
-                  friend: item
+                  friend: item,
                 })
               }
             />
           )}
           onRefresh={this._refresh}
           refreshing={this.state.isLoading}
-          ItemSeparatorComponent={() => <View style={styles.listSeparator} />}
+          ItemSeparatorComponent={() => (
+            <View style={styles.listSeparator} />
+          )}
           ListEmptyComponent={() => (
             <Text style={styles.listEmpty}>Keine Daten geladen</Text>
           )}
@@ -73,16 +75,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     backgroundColor: '#fff',
-    paddingTop: 30
+    paddingTop: 30,
   },
   listSeparator: {
     height: StyleSheet.hairlineWidth,
     backgroundColor: 'lightsalmon',
-    marginVertical: 5
+    marginVertical: 5,
   },
   listEmpty: {
     paddingTop: 100,
     fontSize: 32,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
