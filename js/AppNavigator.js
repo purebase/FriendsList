@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as Icon from '@expo/vector-icons';
 
 import HomeScreen from './screens/HomeScreen';
 import FriendScreen from './screens/FriendScreen';
@@ -55,7 +55,7 @@ export default () => (
           }
 
           return (
-            <MaterialCommunityIcons
+            <Icon.MaterialCommunityIcons
               name={icon}
               size={size}
               color={color}
