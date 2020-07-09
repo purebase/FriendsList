@@ -1,19 +1,18 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import * as Icon from '@expo/vector-icons';
 
 import HomeScreen from './screens/HomeScreen';
-import FriendScreen from './screens/FriendScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import FriendScreen from './screens/FriendScreen';
 
 const Stack = createStackNavigator();
 
 function HomeStack() {
   return (
     <Stack.Navigator
-      initialRouteName="HomeScreen"
       screenOptions={{
         headerStyle: { backgroundColor: 'aliceblue' },
       }}
